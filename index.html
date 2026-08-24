@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aishwarya | Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f5f7fb;
+            color: #222;
+        }
+
+        /* Navbar */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: #111827;
+            padding: 16px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .logo {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        nav ul li a:hover {
+            color: #60a5fa;
+        }
+
+        /* Hero */
+        #home {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 100px 20px 50px;
+            background: linear-gradient(135deg, #dbeafe, #f5f3ff);
+        }
+
+        .hero-content h1 {
+            font-size: 52px;
+            color: #111827;
+            margin-bottom: 15px;
+        }
+
+        .hero-content h1 span {
+            color: #2563eb;
+        }
+
+        .hero-content h2 {
+            font-size: 25px;
+            font-weight: normal;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            max-width: 650px;
+            margin: auto;
+            line-height: 1.7;
+            color: #555;
+            font-size: 17px;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 12px 25px;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 10%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 40px;
+            color: #111827;
+        }
+
+        /* About */
+        .about-box {
+            background: white;
+            max-width: 900px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            line-height: 1.8;
+            font-size: 17px;
+        }
+
+        /* Skills */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .skill {
+            background: white;
+            padding: 18px 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            background: #2563eb;
+            color: white;
+            transform: translateY(-5px);
+        }
+
+        /* Projects */
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+        }
+
+        .project-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .project-card h3 {
+            color: #2563eb;
+            margin-bottom: 15px;
+        }
+
+        .project-card p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* Education */
+        .education-box {
+            background: white;
+            max-width: 800px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .education-box h3 {
+            margin-bottom: 10px;
+            color: #2563eb;
+        }
+
+        .education-box p {
+            line-height: 1.8;
+        }
+
+        /* Contact */
+        #contact {
+            background: #111827;
+            color: white;
+            text-align: center;
+        }
+
+        #contact .section-title {
+            color: white;
+        }
+
+        .contact-info p {
+            margin: 15px 0;
+            font-size: 17px;
+        }
+
+        .contact-info a {
+            color: #93c5fd;
+            text-decoration: none;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            background: #030712;
+            color: white;
+            padding: 20px;
+        }
+
+        /* Mobile */
+        @media (max-width: 700px) {
+            nav {
+                padding: 15px 5%;
+            }
+
+            .logo {
+                font-size: 18px;
+            }
+
+            nav ul {
+                gap: 10px;
+            }
+
+            nav ul li a {
+                font-size: 12px;
+            }
+
+            .hero-content h1 {
+                font-size: 38px;
+            }
+
+            .hero-content h2 {
+                font-size: 20px;
+            }
+
+            section {
+                padding: 60px 7%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">Aishwarya.</div>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- Home -->
+    <section id="home">
+        <div class="hero-content">
+            <h1>Hi, I'm <span>Aishwarya</span></h1>
+
+            <h2>Computer Science Engineering Student</h2>
+
+            <p>
+                I am a passionate Computer Science and Engineering student
+                interested in Web Development, Java, Python and modern
+                technologies. I enjoy building useful applications and
+                continuously improving my technical skills.
+            </p>
+
+            <a href="#projects" class="btn">View My Projects</a>
+        </div>
+    </section>
+
+
+    <!-- About -->
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
+
+        <div class="about-box">
+            <p>
+                Hello! I am Aishwarya, a Computer Science and Engineering
+                student at VSB College of Engineering Technical Campus,
+                Coimbatore.
+            </p>
+
+            <br>
+
+            <p>
+                I am interested in software development and web technologies.
+                My skills include HTML, CSS, JavaScript, Java and Python.
+                I enjoy learning new technologies and developing projects
+                that solve real-world problems.
+            </p>
+        </div>
+    </section>
+
+
+    <!-- Skills -->
+    <section id="skills">
+        <h2 class="section-title">My Skills</h2>
+
+        <div class="skills-container">
+            <div class="skill">HTML5</div>
+            <div class="skill">CSS3</div>
+            <div class="skill">JavaScript</div>
+            <div class="skill">Java</div>
+            <div class="skill">Python</div>
+            <div class="skill">SQL</div>
+            <div class="skill">GitHub</div>
+        </div>
+    </section>
+
+
+    <!-- Projects -->
+    <section id="projects">
+        <h2 class="section-title">My Projects</h2>
+
+        <div class="projects-container">
+
+            <div class="project-card">
+                <h3>Aarambam - Event Management</h3>
+
+                <p>
+                    An event management application designed to manage
+                    registrations, events, bookings and user details.
+                    The project includes an admin panel and database
+                    integration.
+                </p>
+            </div>
+
+
+            <div class="project-card">
+                <h3>Smart Curriculum Activity & Attendance App</h3>
+
+                <p>
+                    A smart application for colleges to manage student
+                    activities, curriculum information and attendance
+                    efficiently.
+                </p>
+            </div>
+
+
+            <div class="project-card">
+                <h3>AI-Powered LPG Consumption Prediction</h3>
+
+                <p>
+                    A machine learning-based system that predicts LPG
+                    consumption and provides smart refill recommendations
+                    based on usage patterns.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Education -->
+    <section id="education">
+        <h2 class="section-title">Education</h2>
+
+        <div class="education-box">
+            <h3>B.E. Computer Science and Engineering</h3>
+
+            <p><strong>College:</strong> VSB College of Engineering Technical Campus, Coimbatore</p>
+
+            <p><strong>Department:</strong> Computer Science and Engineering</p>
+
+            <p><strong>CGPA:</strong> 8.96</p>
+
+            <p><strong>Current Status:</strong> Third Year Student</p>
+        </div>
+    </section>
+
+
+    <!-- Contact -->
+    <section id="contact">
+        <h2 class="section-title">Contact Me</h2>
+
+        <div class="contact-info">
+            <p>Email: <a href="mailto:aishwarya120987@gmail.com">aishwarya120987@gmail.com</a></p>
+
+            <p>GitHub: <a href="#">https://github.com/aishwarya-balakrishnan</a></p>
+
+            <p>LinkedIn: <a href="#">https://www.linkedin.com/in/aishwarya-bala-krishnan-586b2a349</a></p>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Aishwarya. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
